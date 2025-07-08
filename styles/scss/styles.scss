@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap');
 * {
     box-sizing: border-box;
+    font-family: "Assistant", sans-serif;
+    font-optical-sizing: auto;
 }
 
 html {
@@ -26,8 +28,6 @@ img {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    font-family: "Assistant", sans-serif;
-    font-optical-sizing: auto;
     
     .logo-container {
         position: relative;
@@ -92,7 +92,62 @@ img {
         }
     }
 
-    @media (min-width: 925px) {
+    // @media (min-width: 925px) {
+    //     justify-content: center;
+    //     height: 4rem;
+    //     .logo-container .logo {
+    //         max-width: 100%;
+    //     }
+    //     .main-navbar {
+    //         display: block;
+    //         position: static;
+    //         width: fit-content;
+    //         ul {
+    //             flex-direction: row;
+    //             .home {
+    //                 display: none;
+    //             }
+    //             .seperator {
+    //                 display: block;
+    //                 width: 1px;
+    //                 background-color: black;
+    //             }
+    //         }
+            
+    //     }
+    //     .hamburger-btn {
+    //         display: none;
+    //     }
+    // }
+}
+
+.main-footer {
+    background-color: #213b7f;
+    color: white;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+
+    .contact-fields {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .textbox-field {
+            color: #373737;
+            background-color: white;
+        }
+    }
+    a {
+        color: white;
+    }
+}
+
+@media (min-width: 925px) {
+    .main-header {
         justify-content: center;
         height: 4rem;
         .logo-container .logo {
@@ -118,5 +173,9 @@ img {
         .hamburger-btn {
             display: none;
         }
+    }
+
+    .main-footer .contact-fields {
+        flex-direction: row;
     }
 }
