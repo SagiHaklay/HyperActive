@@ -1,9 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap");
 * {
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+  direction: rtl;
+}
+
 body {
   margin: 0;
+  background-color: #eee;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.main-header {
+  background-color: #fff;
+  width: 100vw;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  font-family: "Assistant", sans-serif;
+  font-optical-sizing: auto;
+}
+.main-header .logo-container {
+  position: relative;
+  height: 100%;
+  width: 10rem;
+}
+.main-header .logo-container .logo {
+  max-width: 80%;
+}
+.main-header .logo-container .subtitle {
+  font-size: 0.6rem;
+  font-weight: 700;
+  position: absolute;
+  top: 65%;
+  right: 1rem;
+  text-decoration: none;
+  color: #7e685a;
+}
+.main-header .main-navbar {
+  display: none;
+}
+.main-header .main-navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+.main-header .main-navbar ul .seperator {
+  display: none;
+}
+.main-header .active-navbar {
+  display: block;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background-color: #fff;
+}
+.main-header .hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  border: none;
+  background-color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  gap: 0.2rem;
+  margin: 0 0.5rem;
+}
+.main-header .hamburger-btn div {
+  background-color: #213a7f;
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 12.5%;
+}
+@media (min-width: 925px) {
+  .main-header {
+    justify-content: center;
+    height: 4rem;
+  }
+  .main-header .logo-container .logo {
+    max-width: 100%;
+  }
+  .main-header .main-navbar {
+    display: block;
+    position: static;
+    width: fit-content;
+  }
+  .main-header .main-navbar ul {
+    flex-direction: row;
+  }
+  .main-header .main-navbar ul .home {
+    display: none;
+  }
+  .main-header .main-navbar ul .seperator {
+    display: block;
+    width: 1px;
+    background-color: black;
+  }
+  .main-header .hamburger-btn {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
