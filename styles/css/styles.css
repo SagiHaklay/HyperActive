@@ -20,10 +20,15 @@ img {
   max-height: 100%;
 }
 
+.header-container {
+  width: 100vw;
+  height: 3.5rem;
+}
+
 .main-header {
   background-color: #fff;
-  width: 100vw;
-  height: 3rem;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -86,6 +91,26 @@ img {
   border-radius: 0.5rem;
   width: 100%;
   height: 12.5%;
+}
+
+.site-banner {
+  text-align: center;
+  width: 100vw;
+}
+.site-banner .banner-slogan {
+  background-color: #213b7f;
+  color: white;
+}
+.site-banner .banner-slogan .slogan-1 {
+  font-size: 4rem;
+  font-weight: 600;
+}
+.site-banner .banner-slogan .slogan-2 {
+  font-size: 6rem;
+  font-weight: 900;
+}
+.site-banner .banner-subtitle {
+  padding: 0.5rem;
 }
 
 .main-footer {
@@ -173,7 +198,9 @@ img {
 @media (min-width: 925px) {
   .main-header {
     justify-content: center;
-    height: 4rem;
+    height: 4.5rem;
+    position: fixed;
+    top: 0;
   }
   .main-header .logo-container .logo {
     max-width: 100%;
@@ -196,6 +223,12 @@ img {
   }
   .main-header .hamburger-btn {
     display: none;
+  }
+  .site-banner .banner-slogan .slogan-1 {
+    font-size: 6rem;
+  }
+  .site-banner .banner-slogan .slogan-2 {
+    font-size: 8rem;
   }
   .main-footer .contact-fields {
     flex-direction: row;
