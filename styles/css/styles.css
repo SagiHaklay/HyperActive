@@ -21,7 +21,6 @@ img {
 }
 
 .header-container {
-  width: 100vw;
   height: 3.5rem;
 }
 
@@ -95,7 +94,6 @@ img {
 
 .site-banner {
   text-align: center;
-  width: 100vw;
 }
 .site-banner .banner-slogan {
   background-color: #213b7f;
@@ -113,24 +111,70 @@ img {
   padding: 0.5rem;
 }
 
-.main-footer {
-  background-color: #213b7f;
-  color: white;
-  width: 100vw;
+.career-section {
+  padding: 1rem;
+}
+.career-section .contact-form {
+  display: none;
+}
+
+.career-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  gap: 1rem;
 }
-.main-footer .contact-form {
-  width: 100%;
+.career-content .career-header {
+  font-size: 3rem;
+}
+.career-content .careers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  min-width: 35rem;
+}
+.career-content .careers a {
+  text-decoration: none;
+  color: black;
+}
+.career-content .careers .career-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  width: 8.5rem;
 }
-.main-footer .contact-fields {
+.career-content .careers .career-item .career-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: purple;
+}
+.career-content .careers .career-item .seperator {
+  width: 3rem;
+  height: 3px;
+  border-radius: 2px;
+  background-color: purple;
+}
+.career-content .careers .career-item span {
+  text-align: center;
+}
+
+.contact-form {
+  background-color: #213b7f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem;
+}
+.contact-form .contact-header {
+  padding: 0;
+  margin: 0;
+}
+.contact-form .contact-fields {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -138,7 +182,7 @@ img {
   gap: 1.5rem;
   width: 100%;
 }
-.main-footer .contact-fields .text-fields {
+.contact-form .contact-fields .text-fields {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -146,7 +190,7 @@ img {
   gap: 2rem;
   width: 100%;
 }
-.main-footer .contact-fields .textbox-field {
+.contact-form .textbox-field {
   color: #373737;
   background-color: white;
   width: 80%;
@@ -158,36 +202,43 @@ img {
   font-size: 0.9rem;
   font-weight: 700;
 }
-.main-footer .contact-fields .textbox-field label {
+.contact-form .textbox-field label {
   width: 25%;
 }
-.main-footer .contact-fields .textbox-field input {
+.contact-form .textbox-field input {
   border: none;
   max-width: 7rem;
 }
-.main-footer .contact-fields .textbox-field input::placeholder {
+.contact-form .textbox-field input::placeholder {
   visibility: hidden;
 }
-.main-footer .contact-fields .textbox-field input.invalid::placeholder {
+.contact-form .textbox-field input.invalid::placeholder {
   color: red;
   visibility: visible;
 }
-.main-footer .contact-fields .textbox-field .seperator {
+.contact-form .textbox-field .seperator {
   background-color: #213b7f;
   width: 3px;
   border-radius: 2px;
   height: 1.5rem;
 }
-.main-footer a {
+.contact-form .checkbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.contact-form a {
   color: white;
 }
-.main-footer .contact-btn {
+.contact-form .contact-btn {
   height: 4rem;
   width: 14rem;
   padding: 0.1rem;
   background-color: white;
 }
-.main-footer .contact-btn button {
+.contact-form .contact-btn button {
   border: 2px solid #00b8d4;
   width: 100%;
   height: 100%;
@@ -229,6 +280,22 @@ img {
   }
   .site-banner .banner-slogan .slogan-2 {
     font-size: 8rem;
+  }
+  .career-section {
+    display: grid;
+    grid-template-columns: 40rem auto;
+    grid-template-rows: 9rem auto;
+    grid-template-areas: "careers ." "careers contact";
+  }
+  .career-section .career-content {
+    grid-area: careers;
+  }
+  .career-section .contact-form {
+    display: flex;
+    grid-area: contact;
+  }
+  .career-section .contact-form .contact-header {
+    width: 80%;
   }
   .main-footer .contact-fields {
     flex-direction: row;

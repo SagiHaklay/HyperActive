@@ -20,7 +20,6 @@ img {
     max-height: 100%;
 }
 .header-container {
-    width: 100vw;
     height: 3.5rem;  
 }
 .main-header {
@@ -95,37 +94,9 @@ img {
         }
     }
 
-    // @media (min-width: 925px) {
-    //     justify-content: center;
-    //     height: 4rem;
-    //     .logo-container .logo {
-    //         max-width: 100%;
-    //     }
-    //     .main-navbar {
-    //         display: block;
-    //         position: static;
-    //         width: fit-content;
-    //         ul {
-    //             flex-direction: row;
-    //             .home {
-    //                 display: none;
-    //             }
-    //             .seperator {
-    //                 display: block;
-    //                 width: 1px;
-    //                 background-color: black;
-    //             }
-    //         }
-            
-    //     }
-    //     .hamburger-btn {
-    //         display: none;
-    //     }
-    // }
 }
 .site-banner {
     text-align: center;
-    width: 100vw;
 
     .banner-slogan {
         background-color: #213b7f;
@@ -144,22 +115,70 @@ img {
         padding: 0.5rem;
     }
 }
-.main-footer {
-    background-color: #213b7f;
-    color: white;
-    width: 100vw;
+.career-section {
+    padding: 1rem;
+    .contact-form {
+        display: none;
+        
+    }
+}
+
+.career-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem;
-    gap: 1rem;
-
-    .contact-form {
-        width: 100%;
+    .career-header {
+        font-size: 3rem;
+    }
+    .careers {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        min-width: 35rem;
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        .career-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 8.5rem;
+
+            .career-icon {
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                background-color: purple;
+            }
+            .seperator {
+                width: 3rem;
+                height: 3px;
+                border-radius: 2px;
+                background-color: purple;
+            }
+            span {
+                text-align: center;
+            }
+        }
+    }
+    
+}
+
+.contact-form {
+    background-color: #213b7f;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem;
+    .contact-header {
+        padding: 0;
+        margin: 0;
     }
     .contact-fields {
         display: flex;
@@ -176,7 +195,9 @@ img {
             gap: 2rem;
             width: 100%;
         }
-        .textbox-field {
+        
+    }
+    .textbox-field {
             color: #373737;
             background-color: white;
             width: 80%;
@@ -207,7 +228,13 @@ img {
                 border-radius: 2px;
                 height: 1.5rem;
             }
-        }
+    }
+    .checkbox-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        font-size: 0.8rem;
+        font-weight: 700;
     }
     a {
         color: white;
@@ -264,6 +291,24 @@ img {
         }
         .slogan-2 {
             font-size: 8rem;
+        }
+    }
+    .career-section {
+        display: grid;
+        grid-template-columns: 40rem auto;
+        grid-template-rows: 9rem auto;
+        grid-template-areas: 
+            'careers .'
+            'careers contact';
+        .career-content {
+            grid-area: careers;
+        }
+        .contact-form {
+            display: flex;
+            grid-area: contact;
+            .contact-header {
+                width: 80%;
+            }
         }
     }
     .main-footer {
