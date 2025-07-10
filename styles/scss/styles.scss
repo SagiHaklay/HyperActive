@@ -127,25 +127,27 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+
     .career-header {
         font-size: 3rem;
     }
     .careers {
         display: flex;
         flex-wrap: wrap;
+        flex-direction: column;
         justify-content: center;
         gap: 1rem;
-        min-width: 35rem;
+        width: 100%;
         a {
             text-decoration: none;
             color: black;
+            width: 100%;
         }
         .career-item {
             display: flex;
-            flex-direction: column;
+            // flex-direction: column;
             align-items: center;
-            width: 8.5rem;
+            // width: 8.5rem;
 
             .career-icon {
                 width: 4rem;
@@ -154,13 +156,32 @@ img {
                 background-color: purple;
             }
             .seperator {
-                width: 3rem;
-                height: 3px;
+                // width: 3rem;
+                // height: 3px;
+                height: 3rem;
+                width: 3px;
                 border-radius: 2px;
                 background-color: purple;
             }
-            span {
-                text-align: center;
+            // span {
+            //     text-align: center;
+            // }
+        }
+        @media (min-width: 450px) {
+            flex-direction: row;
+            a {
+                width: fit-content;
+            }
+            .career-item {
+                flex-direction: column;
+                width: 8.5rem;
+                .seperator {
+                    width: 3rem;
+                    height: 3px;
+                }
+                span {
+                    text-align: center;
+                }
             }
         }
     }
