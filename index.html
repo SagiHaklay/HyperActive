@@ -44,25 +44,31 @@
         <h2 class="contact-header">צרו קשר לכל שאלה או לקבלת פגישת ייעוץ (מלאו פרטיכם ונחזור אליכם בהקדם)</h2>
         <form class="contact-form" action="/">
             <div class="contact-fields">
-                <div class="textbox-field">
-                    <label>שם מלא</label>
-                    <input type="text"/>
-                </div>
-                <div class="textbox-field">
-                    <label>טלפון</label>
-                    <input type="tel"/>
-                </div>
-                <div class="textbox-field">
-                    <label>אי-מייל</label>
-                    <input type="email"/>
+                <div class="text-fields">
+                    <div class="textbox-field">
+                        <label for="fullname-input">שם מלא</label>
+                        <div class="seperator"></div>
+                        <input type="text" id="fullname-input" placeholder="*נא להזין שם תקין"/>
+                    </div>
+                    <div class="textbox-field">
+                        <label for="phone-input">טלפון</label>
+                        <div class="seperator"></div>
+                        <input type="tel" id="phone-input" placeholder="*נא להזין מספר טלפון"/>
+                    </div>
+                    <div class="textbox-field">
+                        <label for="email-input">אי-מייל</label>
+                        <div class="seperator"></div>
+                        <input type="email" id="email-input" placeholder="*נא להזין כתובת מייל"/>
+                    </div>
                 </div>
                 
                 
-                <button type="submit">דברו איתי!</button>
+                <div class="contact-btn"><button type="submit">דברו איתי!</button></div>
+                
             </div>
            
             <div>
-                <input type="checkbox" />
+                <input type="checkbox" checked />
                 <span>אני מאשר קבלת עדכונים ומבצעים מהייפראקטיב בכפוף לתקנון.</span>
             </div>
             
