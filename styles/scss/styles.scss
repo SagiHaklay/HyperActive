@@ -12,7 +12,7 @@ html {
 
 body {
     margin: 0;
-    background-color: #eee;
+    
 }
 
 img {
@@ -21,6 +21,28 @@ img {
 }
 .header-container {
     height: 3.5rem;  
+}
+.down-arrow {
+    position: relative;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    .down-1 {
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        z-index: 100;
+        background-color: #fff;
+    }
+    .down-2 {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        transform: rotateZ(45deg);
+        background-color: black;
+        top: 30%;
+        left: 30%;
+    }
 }
 .main-header {
     background-color: #fff;
@@ -51,18 +73,23 @@ img {
     }
     .main-navbar {
         display: none;
-        
-        ul {
+        font-size: 1.2rem;
+        .main-navbar-links {
             list-style: none;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 1rem;
             padding: 0.5rem;
 
             .seperator {
                 display: none;
+            }
+
+            .nav-item > a {
+                text-decoration: none;
+                color: black;
             }
         }
     }
@@ -72,6 +99,26 @@ img {
         top: 100%;
         width: 100%;
         background-color: #fff;
+    }
+    .hidden-navbar {
+        display: none;
+    }
+    .career-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        
+        .career-link-item {
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            width: 100%;
+            border-bottom: 1px #00b8d4 dashed;
+            padding: 0.5rem;
+        }
     }
     .hamburger-btn {
         display: flex;
@@ -91,6 +138,32 @@ img {
             border-radius: 0.5rem;
             width: 100%;
             height: 12.5%;
+        }
+    }
+    .hamburger-btn.hamburger-to-x {
+        .top {
+            transform: rotateZ(45deg) translate(1.1rem, 1.1rem);
+            animation: hamburger-to-x-top 1s linear 1;
+        }
+        .middle {
+            transform: translateX(100%);
+            opacity: 0;
+            animation: hamburger-to-x-middle 1s 1;
+        }
+        .bottom {
+            transform: rotateZ(-45deg);
+            animation: hamburger-to-x-bottom 1s linear 1;
+        }
+    }
+    .hamburger-btn.x-to-hamburger {
+        .top {
+            animation: hamburger-to-x-top 1s linear 1 reverse;
+        }
+        .middle {
+            animation: hamburger-to-x-middle 1s 1 reverse;
+        }
+        .bottom {
+            animation: hamburger-to-x-bottom 1s linear 1 reverse;
         }
     }
 
@@ -113,6 +186,10 @@ img {
     }
     .banner-subtitle {
         padding: 0.5rem;
+        background-color: #eff6df;
+        font-size: 1.2rem;
+        margin-top: 0.3rem;
+        margin-left: 0.5rem;
     }
 }
 .career-section {
@@ -154,6 +231,7 @@ img {
                 height: 4rem;
                 border-radius: 50%;
                 background-color: purple;
+                margin: 0.5rem;
             }
             .seperator {
                 // width: 3rem;
@@ -276,6 +354,33 @@ img {
     }
 }
 
+@keyframes hamburger-to-x-top {
+    0% {
+        transform: rotateZ(0deg) translate(0, 0);
+    }
+    100% {
+        transform: rotateZ(45deg) translate(1.1rem, 1.1rem);
+    }
+}
+@keyframes hamburger-to-x-middle {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(2.5rem);
+        opacity: 0;
+    }
+}
+@keyframes hamburger-to-x-bottom {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(-45deg);
+    }
+}
+
 @media (min-width: 925px) {
     .main-header {
         justify-content: center;
@@ -289,8 +394,11 @@ img {
             display: block;
             position: static;
             width: fit-content;
-            ul {
+            font-size: 1rem;
+            .main-navbar-links {
                 flex-direction: row;
+                gap: 0.5rem;
+                position: relative;
                 .home {
                     display: none;
                 }
@@ -299,8 +407,44 @@ img {
                     width: 1px;
                     background-color: black;
                 }
+                
+                .nav-item > a:hover {
+                    color: #213a7f;
+                    font-weight: 700;
+                    .down-2 {
+                        background-color: #213a7f;
+                    }
+                }
+                
             }
             
+        }
+        .career-navbar {
+            position: absolute;
+            top: 100%;
+            background-color: #1b316e;
+            border: 1px black solid;
+            width: 100%;
+        }
+        .career-links {
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 1rem;
+            width: 100%;
+            height: 14rem;
+            padding: 0.5rem;
+            margin: 0;
+            .career-link-item {
+                border-bottom: none;
+                color: #fff;
+                font-weight: 700;
+                width: fit-content;
+                padding: 0;
+            }
+            .career-link-item:hover {
+                background-color: #fff;
+                color: #1b316e;
+            }
         }
         .hamburger-btn {
             display: none;

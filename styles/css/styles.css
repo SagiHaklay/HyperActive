@@ -12,7 +12,6 @@ html {
 
 body {
   margin: 0;
-  background-color: #eee;
 }
 
 img {
@@ -22,6 +21,29 @@ img {
 
 .header-container {
   height: 3.5rem;
+}
+
+.down-arrow {
+  position: relative;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+}
+.down-arrow .down-1 {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  z-index: 100;
+  background-color: #fff;
+}
+.down-arrow .down-2 {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  transform: rotateZ(45deg);
+  background-color: black;
+  top: 30%;
+  left: 30%;
 }
 
 .main-header {
@@ -52,18 +74,23 @@ img {
 }
 .main-header .main-navbar {
   display: none;
+  font-size: 1.2rem;
 }
-.main-header .main-navbar ul {
+.main-header .main-navbar .main-navbar-links {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
   padding: 0.5rem;
 }
-.main-header .main-navbar ul .seperator {
+.main-header .main-navbar .main-navbar-links .seperator {
   display: none;
+}
+.main-header .main-navbar .main-navbar-links .nav-item > a {
+  text-decoration: none;
+  color: black;
 }
 .main-header .active-navbar {
   display: block;
@@ -71,6 +98,25 @@ img {
   top: 100%;
   width: 100%;
   background-color: #fff;
+}
+.main-header .hidden-navbar {
+  display: none;
+}
+.main-header .career-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.main-header .career-links .career-link-item {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  border-bottom: 1px #00b8d4 dashed;
+  padding: 0.5rem;
 }
 .main-header .hamburger-btn {
   display: flex;
@@ -91,6 +137,28 @@ img {
   width: 100%;
   height: 12.5%;
 }
+.main-header .hamburger-btn.hamburger-to-x .top {
+  transform: rotateZ(45deg) translate(1.1rem, 1.1rem);
+  animation: hamburger-to-x-top 1s linear 1;
+}
+.main-header .hamburger-btn.hamburger-to-x .middle {
+  transform: translateX(100%);
+  opacity: 0;
+  animation: hamburger-to-x-middle 1s 1;
+}
+.main-header .hamburger-btn.hamburger-to-x .bottom {
+  transform: rotateZ(-45deg);
+  animation: hamburger-to-x-bottom 1s linear 1;
+}
+.main-header .hamburger-btn.x-to-hamburger .top {
+  animation: hamburger-to-x-top 1s linear 1 reverse;
+}
+.main-header .hamburger-btn.x-to-hamburger .middle {
+  animation: hamburger-to-x-middle 1s 1 reverse;
+}
+.main-header .hamburger-btn.x-to-hamburger .bottom {
+  animation: hamburger-to-x-bottom 1s linear 1 reverse;
+}
 
 .site-banner {
   text-align: center;
@@ -109,6 +177,10 @@ img {
 }
 .site-banner .banner-subtitle {
   padding: 0.5rem;
+  background-color: #eff6df;
+  font-size: 1.2rem;
+  margin-top: 0.3rem;
+  margin-left: 0.5rem;
 }
 
 .career-section {
@@ -148,6 +220,7 @@ img {
   height: 4rem;
   border-radius: 50%;
   background-color: purple;
+  margin: 0.5rem;
 }
 .career-content .careers .career-item .seperator {
   height: 3rem;
@@ -261,6 +334,32 @@ img {
   font-size: 1.8rem;
 }
 
+@keyframes hamburger-to-x-top {
+  0% {
+    transform: rotateZ(0deg) translate(0, 0);
+  }
+  100% {
+    transform: rotateZ(45deg) translate(1.1rem, 1.1rem);
+  }
+}
+@keyframes hamburger-to-x-middle {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(2.5rem);
+    opacity: 0;
+  }
+}
+@keyframes hamburger-to-x-bottom {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-45deg);
+  }
+}
 @media (min-width: 925px) {
   .main-header {
     justify-content: center;
@@ -275,17 +374,54 @@ img {
     display: block;
     position: static;
     width: fit-content;
+    font-size: 1rem;
   }
-  .main-header .main-navbar ul {
+  .main-header .main-navbar .main-navbar-links {
     flex-direction: row;
+    gap: 0.5rem;
+    position: relative;
   }
-  .main-header .main-navbar ul .home {
+  .main-header .main-navbar .main-navbar-links .home {
     display: none;
   }
-  .main-header .main-navbar ul .seperator {
+  .main-header .main-navbar .main-navbar-links .seperator {
     display: block;
     width: 1px;
     background-color: black;
+  }
+  .main-header .main-navbar .main-navbar-links .nav-item > a:hover {
+    color: #213a7f;
+    font-weight: 700;
+  }
+  .main-header .main-navbar .main-navbar-links .nav-item > a:hover .down-2 {
+    background-color: #213a7f;
+  }
+  .main-header .career-navbar {
+    position: absolute;
+    top: 100%;
+    background-color: #1b316e;
+    border: 1px black solid;
+    width: 100%;
+  }
+  .main-header .career-links {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    height: 14rem;
+    padding: 0.5rem;
+    margin: 0;
+  }
+  .main-header .career-links .career-link-item {
+    border-bottom: none;
+    color: #fff;
+    font-weight: 700;
+    width: fit-content;
+    padding: 0;
+  }
+  .main-header .career-links .career-link-item:hover {
+    background-color: #fff;
+    color: #1b316e;
   }
   .main-header .hamburger-btn {
     display: none;
