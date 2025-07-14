@@ -334,6 +334,30 @@ img {
   font-size: 1.8rem;
 }
 
+.bottom-links {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  background-color: white;
+  gap: 2px;
+  height: 4rem;
+  width: 100%;
+}
+.bottom-links .contact-link, .bottom-links .whatsapp-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #06f;
+  color: white;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+.bottom-links .whatsapp-2 {
+  display: none;
+}
+
 @keyframes hamburger-to-x-top {
   0% {
     transform: rotateZ(0deg) translate(0, 0);
@@ -458,6 +482,25 @@ img {
   }
   .main-footer .contact-fields .text-fields .textbox-field {
     width: 13rem;
+  }
+  .bottom-links {
+    width: fit-content;
+    height: 2rem;
+    right: 1rem;
+    background-color: transparent;
+  }
+  .bottom-links .contact-link, .bottom-links .whatsapp-1 {
+    display: none;
+  }
+  .bottom-links .whatsapp-2 {
+    display: inline;
+  }
+  .bottom-links .whatsapp-link {
+    border-radius: 1rem;
+    border: 2px greenyellow solid;
+    padding: 0.5rem;
+    width: 20rem;
+    height: 100%;
   }
 }
 
