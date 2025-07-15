@@ -126,19 +126,19 @@
                 <form action="/" class="contact-form">
                     <h2 class="contact-header">רוצה לשמוע עוד?</h2>
                     <div class="textbox-field">
-                        <label for="fullname-input">שם מלא</label>
+                        <label for="contact-fullname-input">שם מלא</label>
                         <div class="seperator"></div>
-                        <input type="text" id="fullname-input" placeholder="*נא להזין שם תקין"/>
+                        <input type="text" id="contact-fullname-input" placeholder="*נא להזין שם תקין"/>
                     </div>
                     <div class="textbox-field">
-                        <label for="phone-input">טלפון</label>
+                        <label for="contact-phone-input">טלפון</label>
                         <div class="seperator"></div>
-                        <input type="tel" id="phone-input" placeholder="*נא להזין מספר טלפון"/>
+                        <input type="text" id="contact-phone-input" placeholder="*נא להזין מספר טלפון"/>
                     </div>
                     <div class="textbox-field">
-                        <label for="email-input">אי-מייל</label>
+                        <label for="contact-email-input">אי-מייל</label>
                         <div class="seperator"></div>
-                        <input type="email" id="email-input" placeholder="*נא להזין כתובת מייל"/>
+                        <input type="email" id="contact-email-input" placeholder="*נא להזין כתובת מייל"/>
                     </div>
                     <div class="checkbox-container">
                         <input type="checkbox" checked />
@@ -146,7 +146,7 @@
                     </div>
                     <a href="#">מדיניות פרטיות משתמשים</a>
                     <a href="#">הצהרת נגישות</a>
-                    <div class="contact-btn"><button type="submit">דברו איתי!</button></div>
+                    <div class="contact-btn"><button id="contact-submit-btn" type="submit">דברו איתי!</button></div>
                 </form>
             
         </div>
@@ -159,24 +159,24 @@
             <div class="contact-fields">
                 <div class="text-fields">
                     <div class="textbox-field">
-                        <label for="fullname-input">שם מלא</label>
+                        <label for="footer-fullname-input">שם מלא</label>
                         <div class="seperator"></div>
-                        <input type="text" id="fullname-input" placeholder="*נא להזין שם תקין"/>
+                        <input type="text" id="footer-fullname-input" placeholder="*נא להזין שם תקין"/>
                     </div>
                     <div class="textbox-field">
-                        <label for="phone-input">טלפון</label>
+                        <label for="footer-phone-input">טלפון</label>
                         <div class="seperator"></div>
-                        <input type="tel" id="phone-input" placeholder="*נא להזין מספר טלפון"/>
+                        <input type="text" id="footer-phone-input" placeholder="*נא להזין מספר טלפון"/>
                     </div>
                     <div class="textbox-field">
-                        <label for="email-input">אי-מייל</label>
+                        <label for="footer-email-input">אי-מייל</label>
                         <div class="seperator"></div>
-                        <input type="email" id="email-input" placeholder="*נא להזין כתובת מייל"/>
+                        <input type="email" id="footer-email-input" placeholder="*נא להזין כתובת מייל"/>
                     </div>
                 </div>
                 
                 
-                <div class="contact-btn"><button type="submit">דברו איתי!</button></div>
+                <div class="contact-btn"><button id="footer-submit-btn" type="submit">דברו איתי!</button></div>
                 
             </div>
            
@@ -199,8 +199,10 @@
             <span class="whatsapp-2">היי! אנחנו פה, יש לך שאלה?</span>
         </a>
     </div>
-    <div id="modal-container" class="modal-container modal-container-popup">
+    <div id="modal-container" class="modal-container">
+        <div class="modal-bg">
         <div class="modal">
+            <!-- <img class="modal-bg" src="./assets/modal-bg.76e0ddc9.jpg" alt="modal background"> -->
             <button id="modal-exit-btn" class="exit-btn" type="button">
                 <div class="x-line-1"></div>
                 <div class="x-line-2"></div>
@@ -210,9 +212,9 @@
             
             <form class="modal-form" action="#">
                 
-                <input class="text-input" type="text" placeholder="שם מלא"/>
-                <input class="text-input" type="text" placeholder="מספר טלפון" name="phone" id="phone-input" />
-                <input class="text-input" type="email" placeholder="אי-מייל" name="email" id="email-input" />
+                <input class="text-input name-input" type="text" placeholder="שם מלא" id="modal-name-input"/>
+                <input class="text-input phone-input" type="text" placeholder="מספר טלפון" name="phone" id="modal-phone-input" />
+                <input class="text-input email-input" type="email" placeholder="אי-מייל" name="email" id="modal-email-input" />
                 <div class="checkbox-container">
                     <input type="checkbox" checked />
                     <span>אני מאשר קבלת עדכונים ומבצעים מהייפראקטיב.</span>
@@ -220,6 +222,7 @@
                 <button id="modal-submit-btn" class="modal-btn" type="submit">דברו איתי >></button>
             </form>
             </div>
+        </div>
         </div>
     </div>
     <script src="./main.js"></script>
