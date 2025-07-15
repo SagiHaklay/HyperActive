@@ -60,3 +60,27 @@ document.getElementById('modal-submit-btn').addEventListener('click', () => {
     modalContainer.classList.remove('modal-container-popup');
     modalContainer.classList.add('modal-container-exit');
 });
+const headerHamburgerBtn = document.getElementById('header-hamburger-btn');
+headerHamburgerBtn.addEventListener('click', () => {
+    const mainNavbar = document.getElementById('main-navbar');
+    if (mainNavbar.classList.contains('active-navbar')) {
+        mainNavbar.classList.remove('active-navbar');
+        headerHamburgerBtn.classList.remove('hamburger-to-x');
+        headerHamburgerBtn.classList.add('x-to-hamburger');
+    } else {
+        mainNavbar.classList.add('active-navbar');
+        if (headerHamburgerBtn.classList.contains('x-to-hamburger'))
+            headerHamburgerBtn.classList.remove('x-to-hamburger');
+        headerHamburgerBtn.classList.add('hamburger-to-x');
+    }
+});
+
+const careersLink = document.getElementById('careers-link');
+careersLink.addEventListener('click', () => {
+    const careerNavbar = document.getElementById('career-navbar');
+    if (careerNavbar.classList.contains('hidden-navbar')) {
+        careerNavbar.classList.remove('hidden-navbar');
+    } else {
+        careerNavbar.classList.add('hidden-navbar');
+    }
+});

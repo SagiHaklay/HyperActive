@@ -91,6 +91,7 @@ img {
                 text-decoration: none;
                 color: black;
             }
+            
         }
     }
     .active-navbar {
@@ -143,27 +144,28 @@ img {
     .hamburger-btn.hamburger-to-x {
         .top {
             transform: rotateZ(45deg) translate(1.1rem, 1.1rem);
-            animation: hamburger-to-x-top 1s linear 1;
+            animation: hamburger-to-x-top 0.5s linear 1;
         }
         .middle {
             transform: translateX(100%);
             opacity: 0;
-            animation: hamburger-to-x-middle 1s 1;
+            animation: hamburger-to-x-middle 0.5s linear 1;
         }
         .bottom {
             transform: rotateZ(-45deg);
-            animation: hamburger-to-x-bottom 1s linear 1;
+            animation: hamburger-to-x-bottom 0.5s linear 1;
         }
     }
     .hamburger-btn.x-to-hamburger {
         .top {
-            animation: hamburger-to-x-top 1s linear 1 reverse;
+
+            animation: x-to-hamburger-top 0.5s linear 1;
         }
         .middle {
-            animation: hamburger-to-x-middle 1s 1 reverse;
+            animation: x-to-hamburger-middle 0.5s linear 1;
         }
         .bottom {
-            animation: hamburger-to-x-bottom 1s linear 1 reverse;
+            animation: x-to-hamburger-bottom 0.5s linear 1;
         }
     }
 
@@ -495,6 +497,14 @@ img {
         transform: rotateZ(45deg) translate(1.1rem, 1.1rem);
     }
 }
+@keyframes x-to-hamburger-top {
+    from {
+        transform: rotateZ(45deg) translate(1.1rem, 1.1rem);
+    }
+    to {
+        transform: rotateZ(0deg) translate(0, 0);
+    }
+}
 @keyframes hamburger-to-x-middle {
     0% {
         transform: translateX(0);
@@ -505,12 +515,30 @@ img {
         opacity: 0;
     }
 }
+@keyframes x-to-hamburger-middle {
+    from {
+        transform: translateX(2.5rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 @keyframes hamburger-to-x-bottom {
     0% {
         transform: rotateZ(0deg);
     }
     100% {
         transform: rotateZ(-45deg);
+    }
+}
+@keyframes x-to-hamburger-bottom {
+    from {
+        transform: rotateZ(-45deg);
+    }
+    to {
+        transform: rotateZ(0deg);
     }
 }
 @keyframes modal-popup {
@@ -567,16 +595,24 @@ img {
                         background-color: #213a7f;
                     }
                 }
+                .careers-link:hover + .career-navbar {
+                    visibility: visible;
+                }
                 
             }
             
         }
         .career-navbar {
+            display: block;
+            visibility: hidden;
             position: absolute;
-            top: 100%;
+            top: 80%;
             background-color: #1b316e;
             border: 1px black solid;
             width: 100%;
+        }
+        .career-navbar:hover {
+            visibility: visible;
         }
         .career-links {
             flex-direction: column;
