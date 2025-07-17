@@ -84,3 +84,13 @@ careersLink.addEventListener('click', () => {
         careerNavbar.classList.add('hidden-navbar');
     }
 });
+const courseProcessItems = document.querySelectorAll('.course-process-item');
+for (let item of courseProcessItems) {
+    item.addEventListener('click', () => {
+        if (item.classList.contains('show')) {
+            item.classList.remove('show');
+        } else  {
+            item.classList.add('show');
+        }
+    });
+}
