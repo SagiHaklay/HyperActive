@@ -166,6 +166,7 @@ img {
 .site-banner .banner-slogan {
   background-color: #213b7f;
   color: white;
+  height: 13.5rem;
 }
 .site-banner .banner-slogan .slogan-1 {
   font-size: 4rem;
@@ -174,17 +175,21 @@ img {
 .site-banner .banner-slogan .slogan-2 {
   font-size: 6rem;
   font-weight: 900;
+  position: relative;
+  top: -3.5rem;
 }
-.site-banner .banner-subtitle {
+
+.banner-subtitle {
   padding: 0.5rem;
   background-color: #eff6df;
   font-size: 1.2rem;
   margin-top: 0.3rem;
   margin-left: 0.5rem;
+  text-align: center;
 }
 
 .career-section {
-  padding: 1rem;
+  padding: 0.5rem 0;
 }
 .career-section .contact-form {
   display: none;
@@ -334,6 +339,42 @@ img {
   font-size: 1.8rem;
 }
 
+.pros-section {
+  background-image: url("../../assets/pros-bg.png");
+  background-size: cover;
+  box-shadow: 0 -1.5rem 1.5rem #aaa6a3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.1rem;
+  padding: 1rem;
+}
+.pros-section .pros-intro {
+  width: 100%;
+}
+.pros-section .emphasis {
+  color: blue;
+}
+.pros-section .compare {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+.pros-section .compare .other-schools, .pros-section .compare .our-school {
+  padding: 0.5rem;
+}
+.pros-section .compare .other-schools {
+  background-color: black;
+  color: white;
+}
+.pros-section .compare .other-schools a {
+  color: white;
+}
+.pros-section .compare .our-school {
+  background-color: #eff6df;
+}
+
 .bottom-links {
   position: fixed;
   bottom: 0;
@@ -458,11 +499,6 @@ img {
 
 .modal-container.modal-container-exit {
   animation: modal-exit 0.5s ease-out 1;
-}
-
-.modal-container.modal-container-popup {
-  display: flex;
-  animation: modal-popup 0.5s ease-in 1;
 }
 
 @keyframes hamburger-to-x-top {
@@ -619,9 +655,10 @@ img {
   }
   .career-section {
     display: grid;
-    grid-template-columns: 40rem auto;
-    grid-template-rows: 9rem auto;
-    grid-template-areas: "careers ." "careers contact";
+    grid-template-columns: auto 22rem;
+    grid-template-rows: 3rem 9rem auto;
+    padding: 0.5rem 8rem 3rem;
+    grid-template-areas: "subtitle subtitle" "careers ." "careers contact";
   }
   .career-section .career-content {
     grid-area: careers;
@@ -632,6 +669,20 @@ img {
   }
   .career-section .contact-form .contact-header {
     width: 80%;
+  }
+  .career-section .banner-subtitle {
+    grid-area: subtitle;
+  }
+  .pros-section .compare {
+    flex-direction: row;
+  }
+  .pros-section .compare .other-schools, .pros-section .compare .our-school {
+    width: 45%;
+    transition: transform 0.5s;
+  }
+  .pros-section .compare .other-schools:hover, .pros-section .compare .our-school:hover {
+    transform: scale(1.1, 1.1);
+    box-shadow: 0 1rem 1rem 1rem #aaa6a3;
   }
   .main-footer .contact-fields {
     flex-direction: row;
@@ -662,6 +713,10 @@ img {
     padding: 0.5rem;
     width: 20rem;
     height: 100%;
+  }
+  .modal-container.modal-container-popup {
+    display: flex;
+    animation: modal-popup 0.5s ease-in 1;
   }
 }
 
