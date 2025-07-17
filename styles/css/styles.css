@@ -375,6 +375,21 @@ img {
   background-color: #eff6df;
 }
 
+.companies-section {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.companies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2.5rem;
+}
+.companies-container .company-item {
+  max-width: 5.5rem;
+}
+
 .bottom-links {
   position: fixed;
   bottom: 0;
