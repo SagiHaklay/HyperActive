@@ -255,6 +255,9 @@ img {
 .career-content .careers .career-item .seperator.embedded {
   background-color: #475f8e;
 }
+.career-content .careers .career-item:hover {
+  opacity: 0.7;
+}
 @media (min-width: 450px) {
   .career-content .careers {
     flex-direction: row;
@@ -462,7 +465,9 @@ img {
   top: 50%;
 }
 .about-section .course-process .course-process-item .course-process-content {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s linear;
 }
 .about-section .course-process .course-process-item ol {
   list-style-type: none;
@@ -473,7 +478,7 @@ img {
   transform: rotateZ(45deg);
 }
 .about-section .course-process .course-process-item.show .course-process-content {
-  display: block;
+  max-height: 50rem;
 }
 .about-section .course-process .examination {
   background-color: #0598a8;
@@ -533,14 +538,14 @@ img {
     display: none;
   }
   .about-section .course-process .course-process-item .course-process-content {
-    display: block;
+    max-height: max-content;
   }
   .about-section .course-process .course-process-item .next-item-arrow {
     width: 2rem;
     height: 2rem;
     position: absolute;
     transform: rotateZ(45deg);
-    z-index: 200;
+    z-index: 100;
   }
 }
 
@@ -577,7 +582,7 @@ img {
   width: 100vw;
   height: 100vh;
   background-color: rgba(126, 104, 90, 0.5);
-  z-index: 200;
+  z-index: 300;
 }
 .modal-container .modal-bg {
   background-image: url("../../assets/modal-bg.76e0ddc9.jpg");
@@ -742,28 +747,13 @@ img {
     transform: translateY(-100%);
   }
 }
-@keyframes expand-height {
-  from {
-    transform: scaleY(0.3);
-  }
-  to {
-    transform: scaleY(1);
-  }
-}
-@keyframes reduce-height {
-  from {
-    transform: scaleY(1);
-  }
-  to {
-    transform: scaleY(0);
-  }
-}
 @media (min-width: 925px) {
   .main-header {
     justify-content: center;
     height: 4.5rem;
     position: fixed;
     top: 0;
+    z-index: 200;
   }
   .main-header .logo-container .logo {
     max-width: 100%;
@@ -847,6 +837,8 @@ img {
   }
   .career-section .career-content {
     grid-area: careers;
+  }
+  .career-section .career-content .careers {
     width: 40rem;
   }
   .career-section .contact-form {

@@ -272,6 +272,9 @@ img {
                 background-color: #475f8e;
             }
         }
+        .career-item:hover {
+            opacity: 0.7;
+        }
         @media (min-width: 450px) {
             flex-direction: row;
             a {
@@ -478,8 +481,10 @@ img {
                 }
             }
             .course-process-content {
-                display: none;
-                
+                // display: none;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s linear;
             }
             
             ol {
@@ -493,8 +498,7 @@ img {
                 transform: rotateZ(45deg);
             }
             .course-process-content {
-                display: block;
-                
+                max-height: 50rem;
             }
         }
         .examination {
@@ -557,7 +561,7 @@ img {
                     display: none;
                 }
                 .course-process-content {
-                    display: block;
+                    max-height: max-content;
                 }
 
                 .next-item-arrow {
@@ -565,7 +569,7 @@ img {
                     height: 2rem;
                     position: absolute;
                     transform: rotateZ(45deg);
-                    z-index: 200;
+                    z-index: 100;
                 }
             }
         }
@@ -605,7 +609,7 @@ img {
     width: 100vw;
     height: 100vh;
     background-color: rgba($color: #7e685a, $alpha: 0.5);
-    z-index: 200;
+    z-index: 300;
     // transform: translateY(-100%);
     .modal-bg {
         background-image: url("../../assets/modal-bg.76e0ddc9.jpg");
@@ -773,28 +777,13 @@ img {
         transform: translateY(-100%);
     }
 }
-@keyframes expand-height {
-    from {
-        transform: scaleY(0.3);
-    }
-    to {
-        transform: scaleY(1);
-    }
-}
-@keyframes reduce-height {
-    from {
-        transform: scaleY(1);
-    }
-    to {
-        transform: scaleY(0);
-    }
-}
 @media (min-width: 925px) {
     .main-header {
         justify-content: center;
         height: 4.5rem;
         position: fixed;
         top: 0;
+        z-index: 200;
         .logo-container .logo {
             max-width: 100%;
         }
@@ -885,7 +874,9 @@ img {
             'careers contact';
         .career-content {
             grid-area: careers;
-            width: 40rem;
+            .careers {
+                width: 40rem;
+            }
         }
         .contact-form {
             display: flex;
