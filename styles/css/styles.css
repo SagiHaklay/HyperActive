@@ -216,6 +216,7 @@ img {
   justify-content: center;
   gap: 1rem;
   width: 100%;
+  animation: career-enter 0.7s ease;
 }
 .career-content .careers a {
   text-decoration: none;
@@ -828,6 +829,16 @@ img {
   to {
     display: none;
     transform: translateY(-100%);
+  }
+}
+@keyframes career-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 @media (min-width: 925px) {
