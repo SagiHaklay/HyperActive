@@ -10,12 +10,19 @@
 <body>
     <div class="header-container">
         <header class="main-header">
-            <a href="/">
-                <div class="logo-container">
-                    <img class="logo" src="./assets/hyperactive-logo.png" alt="logo">
-                    <div class="subtitle">בית הספר להיי-טק הטוב בישראל</div>
-                </div>
-            </a>
+            <div class="mobile-header">
+                <a href="/">
+                    <div class="logo-container">
+                        <img class="logo" src="./assets/hyperactive-logo.png" alt="logo">
+                        <div class="subtitle">בית הספר להיי-טק הטוב בישראל</div>
+                    </div>
+                </a>
+                <button id="header-hamburger-btn" class="hamburger-btn">
+                    <div class="top"></div>
+                    <div class="middle"></div>
+                    <div class="bottom"></div>
+                </button>
+            </div>
             <nav id="main-navbar" class="main-navbar">
                 <ul class="main-navbar-links">
                     <li class="nav-item home"><a href="/">
@@ -61,11 +68,7 @@
                         שירות לציבור</a></li>
                 </ul>
             </nav>
-            <button id="header-hamburger-btn" class="hamburger-btn">
-                <div class="top"></div>
-                <div class="middle"></div>
-                <div class="bottom"></div>
-            </button>
+            
         </header>
     </div>
     <main>

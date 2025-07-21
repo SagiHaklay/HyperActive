@@ -20,7 +20,7 @@ img {
 }
 
 .header-container {
-  height: 3.5rem;
+  min-height: 4rem;
 }
 
 .down-arrow {
@@ -51,9 +51,12 @@ img {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
+}
+.main-header .mobile-header {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
 }
 .main-header .logo-container {
   position: relative;
@@ -94,8 +97,6 @@ img {
 }
 .main-header .active-navbar {
   display: block;
-  position: absolute;
-  top: 100%;
   width: 100%;
   background-color: #fff;
 }
@@ -162,21 +163,26 @@ img {
 
 .site-banner {
   text-align: center;
-}
-.site-banner .banner-slogan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #213b7f;
   color: white;
-  height: 13.5rem;
+  height: 8rem;
+}
+.site-banner .banner-slogan {
+  position: relative;
 }
 .site-banner .banner-slogan .slogan-1 {
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: 600;
+  height: 2.5rem;
 }
 .site-banner .banner-slogan .slogan-2 {
-  font-size: 6rem;
+  font-size: 3.5rem;
   font-weight: 900;
-  position: relative;
-  top: -3.5rem;
+  height: 5rem;
 }
 
 .banner-subtitle {
@@ -750,6 +756,8 @@ img {
 @media (min-width: 925px) {
   .main-header {
     justify-content: center;
+    flex-direction: row;
+    align-items: center;
     height: 4.5rem;
     position: fixed;
     top: 0;
@@ -822,11 +830,16 @@ img {
   .main-header .hamburger-btn {
     display: none;
   }
+  .site-banner {
+    height: 12.5rem;
+  }
   .site-banner .banner-slogan .slogan-1 {
     font-size: 6rem;
+    height: 4rem;
   }
   .site-banner .banner-slogan .slogan-2 {
     font-size: 8rem;
+    height: 9rem;
   }
   .career-section {
     display: grid;
