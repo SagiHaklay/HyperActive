@@ -167,7 +167,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #213b7f;
+  background: linear-gradient(155deg, #154b9c, #213b7f) !important;
   color: white;
   height: 8rem;
 }
@@ -430,7 +430,7 @@ img {
   gap: 2.5rem;
 }
 .companies-container .company-item {
-  max-width: 5.5rem;
+  width: 6rem;
 }
 
 .about-section {
@@ -930,12 +930,19 @@ img {
     font-size: 8rem;
     height: 9rem;
   }
+  .career-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .career-section {
+    min-width: 62rem;
+    width: 80%;
     display: grid;
-    grid-template-columns: 7fr 4fr;
+    grid-template-columns: 40rem auto 22rem;
     grid-template-rows: 3rem 9rem auto;
     padding: 0.5rem 0.5rem 3rem;
-    grid-template-areas: "subtitle subtitle" "careers ." "careers contact";
+    grid-template-areas: "subtitle subtitle subtitle" "careers . ." "careers . contact";
   }
   .career-section .career-content {
     grid-area: careers;
