@@ -307,6 +307,9 @@ img {
                     text-align: center;
                 }
             }
+            .arrow-container {
+                display: none;
+            }
         }
     }
     
@@ -591,6 +594,59 @@ img {
         }
     }
 }
+.faq-section {
+    background-color: #fff6df;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.public-service-section {
+    background-image: url("../../assets/pros-bg.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.expandable-item-list {
+    list-style: none;
+    
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    
+    .expandable-item-column {
+        display: flex;
+        flex-direction: column;
+    }
+    .expandable-item {
+        border: .5px solid #dbdbdb;
+        border-left: none;
+        border-right: none;
+        width: 100%;
+        padding: 1rem;
+    }
+    .expandable-item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 5rem;
+        gap: 0.5rem;
+        color: #007cba;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+    .expandable-item-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s linear;
+    }
+    .expandable-item-content.show {
+        max-height: 50rem;
+    }
+}
 .bottom-links {
     position: fixed;
     bottom: 0;
@@ -720,6 +776,16 @@ img {
 }
 .modal-container.modal-container-exit {
     animation: modal-exit 0.5s ease-out 1;
+}
+.section {
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-footer {
+    padding-bottom: 4rem;
+    background-color: #213b7f;
 }
 
 @keyframes hamburger-to-x-top {
@@ -905,9 +971,6 @@ img {
                     width: 4rem;
                     height: 4rem;
                 }
-                .arrow-container {
-                    display: none;
-                }
             }
         }
         .contact-form {
@@ -932,6 +995,14 @@ img {
         .other-schools:hover, .our-school:hover {
             transform: scale(1.1, 1.1);
             box-shadow: 0 1rem 1rem 1rem #aaa6a3;
+        }
+    }
+    .expandable-item-list {
+        flex-direction: row-reverse;
+        justify-content: center;
+        gap: 2rem;
+        .expandable-item-column {
+            width: 25rem;
         }
     }
     .main-footer {

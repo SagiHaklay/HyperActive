@@ -94,3 +94,20 @@ for (let item of courseProcessItems) {
         }
     });
 }
+const expandableItems =  document.querySelectorAll('.expandable-item');
+for (let item of expandableItems) {
+    const header = item.children[0];
+    const content = item.children[1];
+    header.addEventListener('click', () => {
+        const icon = header.lastElementChild;
+        if (content.classList.contains('show')) {
+            content.classList.remove('show');
+            icon.classList.remove('fa-arrow-circle-up');
+            icon.classList.add('fa-arrow-circle-down');
+        } else {
+            content.classList.add('show');
+            icon.classList.remove('fa-arrow-circle-down');
+            icon.classList.add('fa-arrow-circle-up');
+        }
+    });
+}
