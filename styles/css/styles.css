@@ -221,14 +221,22 @@ img {
   text-decoration: none;
   color: black;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.career-content .careers .arrow-container {
+  width: 1rem;
 }
 .career-content .careers .career-item {
   display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
   align-items: center;
 }
 .career-content .careers .career-item .career-icon {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   margin: 0.5rem;
 }
@@ -569,6 +577,7 @@ img {
   justify-content: center;
   align-items: center;
   background-color: #06f;
+  gap: 0.5rem;
   color: white;
   width: 100%;
   height: 100%;
@@ -774,7 +783,8 @@ img {
   }
   .main-header .main-navbar .main-navbar-links {
     flex-direction: row;
-    gap: 0.5rem;
+    gap: 0.25rem;
+    justify-content: space-around;
     position: relative;
   }
   .main-header .main-navbar .main-navbar-links .home {
@@ -853,6 +863,13 @@ img {
   }
   .career-section .career-content .careers {
     width: 40rem;
+  }
+  .career-section .career-content .careers .career-item .career-icon {
+    width: 4rem;
+    height: 4rem;
+  }
+  .career-section .career-content .careers .arrow-container {
+    display: none;
   }
   .career-section .contact-form {
     display: flex;
