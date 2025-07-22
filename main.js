@@ -6,12 +6,13 @@ document.getElementById('modal-exit-btn').addEventListener('click', () => {
 setTimeout(() => {
     modalContainer.classList.add('modal-container-popup');
 }, 1000);
+const successModal = document.getElementById('success-modal');
+document.getElementById('success-close-btn').addEventListener('click', () => {
+    successModal.classList.remove('show');
+});
 
-function validateForm(submitBtnId, nameInputId, phoneInputId, emailInputId) {
-    const submitBtn = document.getElementById(submitBtnId);
-    submitBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-        const nameInput = document.getElementById(nameInputId);
+function validateForm(nameInputId, phoneInputId, emailInputId) {
+    const nameInput = document.getElementById(nameInputId);
         const phoneInput = document.getElementById(phoneInputId);
         const emailInput = document.getElementById(emailInputId);
         let valid = true;
@@ -50,15 +51,28 @@ function validateForm(submitBtnId, nameInputId, phoneInputId, emailInputId) {
             phoneInput.value = "";
             emailInput.value = "";
         }
+    return valid;
+}
+function handleFormSubmit(submitBtnId, nameInputId, phoneInputId, emailInputId) {
+    document.getElementById(submitBtnId).addEventListener('click', (event) => {
+        event.preventDefault();
+        const isValid = validateForm(nameInputId, phoneInputId, emailInputId);
+        if (isValid) {
+            successModal.classList.add('show');
+        }
     });
 }
-
-validateForm("modal-submit-btn", "modal-name-input", "modal-phone-input", "modal-email-input");
-validateForm("contact-submit-btn", "contact-fullname-input", "contact-phone-input", "contact-email-input");
-validateForm("footer-submit-btn", "footer-fullname-input", "footer-phone-input", "footer-email-input");
-document.getElementById('modal-submit-btn').addEventListener('click', () => {
-    modalContainer.classList.remove('modal-container-popup');
-    modalContainer.classList.add('modal-container-exit');
+// handleFormSubmit("modal-submit-btn", "modal-name-input", "modal-phone-input", "modal-email-input");
+handleFormSubmit("contact-submit-btn", "contact-fullname-input", "contact-phone-input", "contact-email-input");
+handleFormSubmit("footer-submit-btn", "footer-fullname-input", "footer-phone-input", "footer-email-input");
+document.getElementById('modal-submit-btn').addEventListener('click', (event) => {
+    event.preventDefault();
+    const isValid = validateForm("modal-name-input", "modal-phone-input", "modal-email-input");
+    if (isValid) {
+        modalContainer.classList.remove('modal-container-popup');
+        modalContainer.classList.add('modal-container-exit');
+        successModal.classList.add('show');
+    }
 });
 const headerHamburgerBtn = document.getElementById('header-hamburger-btn');
 headerHamburgerBtn.addEventListener('click', () => {

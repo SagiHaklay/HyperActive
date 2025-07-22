@@ -18,7 +18,7 @@ img {
   max-height: 100%;
 }
 
-header, main, footer, .bottom-links, .modal {
+header, main, footer, .bottom-links, .modal, .success-modal {
   direction: rtl;
 }
 
@@ -291,10 +291,16 @@ header, main, footer, .bottom-links, .modal {
   .career-content .careers a {
     width: fit-content;
     border: none;
+    justify-content: start;
+    flex-direction: column;
   }
   .career-content .careers .career-item {
     flex-direction: column;
     width: 8.5rem;
+  }
+  .career-content .careers .career-item .career-icon {
+    width: 4rem;
+    height: 4rem;
   }
   .career-content .careers .career-item .seperator {
     width: 3rem;
@@ -355,6 +361,7 @@ header, main, footer, .bottom-links, .modal {
 }
 .contact-form .textbox-field input {
   border: none;
+  outline: none;
   max-width: 7rem;
 }
 .contact-form .textbox-field input::placeholder {
@@ -686,16 +693,7 @@ header, main, footer, .bottom-links, .modal {
   border-radius: 50%;
   transform: rotateZ(42deg);
 }
-.modal-container .modal {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  transform: rotateZ(-42deg);
-}
-.modal-container .modal .exit-btn {
+.modal-container .exit-btn {
   background-color: transparent;
   border: none;
   width: 2.5rem;
@@ -704,16 +702,25 @@ header, main, footer, .bottom-links, .modal {
   flex-direction: column;
   justify-content: space-evenly;
 }
-.modal-container .modal .exit-btn .x-line-1, .modal-container .modal .exit-btn .x-line-2 {
+.modal-container .exit-btn .x-line-1, .modal-container .exit-btn .x-line-2 {
   width: 100%;
   height: 2px;
   background-color: black;
 }
-.modal-container .modal .exit-btn .x-line-1 {
+.modal-container .exit-btn .x-line-1 {
   transform: rotateZ(45deg) translate(0.6rem, 0.6rem);
 }
-.modal-container .modal .exit-btn .x-line-2 {
+.modal-container .exit-btn .x-line-2 {
   transform: rotateZ(-45deg);
+}
+.modal-container .modal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transform: rotateZ(-42deg);
 }
 .modal-container .modal h1 {
   color: #154b9c;
@@ -763,6 +770,48 @@ header, main, footer, .bottom-links, .modal {
   border: none;
   font-size: 1.5rem;
   padding: 0.5rem;
+}
+.modal-container .success-modal {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 35rem;
+  height: 24rem;
+  padding: 0.8rem;
+  font-size: 1.9rem;
+  gap: 0.3rem;
+}
+.modal-container .success-modal h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  align-self: center;
+}
+.modal-container .success-modal .exit-btn {
+  width: 2.1rem;
+  height: 2.1rem;
+  align-self: flex-end;
+}
+.modal-container .success-modal .exit-btn .x-line-1, .modal-container .success-modal .exit-btn .x-line-2 {
+  height: 5px;
+  border-radius: 2px;
+}
+.modal-container .success-modal .exit-btn .x-line-1 {
+  transform: rotateZ(45deg) translate(0.5rem, 0.5rem);
+}
+.modal-container .success-modal .content {
+  padding-left: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+.modal-container .success-modal .msg {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.modal-container .success-modal .icon-container {
+  color: green;
+  font-size: 5rem;
+  align-self: flex-end;
 }
 
 .modal-container.modal-container-exit {
@@ -962,7 +1011,7 @@ header, main, footer, .bottom-links, .modal {
     min-width: 59rem;
     width: 80%;
     display: grid;
-    grid-template-columns: 40rem auto 20rem;
+    grid-template-columns: 40rem auto 18rem;
     grid-template-rows: 3rem 9rem auto;
     padding: 0.5rem 0.5rem 3rem;
     grid-template-areas: "subtitle subtitle subtitle" "careers . ." "careers . contact";
@@ -973,14 +1022,9 @@ header, main, footer, .bottom-links, .modal {
   .career-section .career-content .careers {
     width: 40rem;
   }
-  .career-section .career-content .careers .career-item .career-icon {
-    width: 4rem;
-    height: 4rem;
-  }
   .career-section .contact-form {
     display: flex;
     grid-area: contact;
-    min-width: 19rem;
     max-width: 22rem;
   }
   .career-section .contact-form .contact-header {
@@ -1041,11 +1085,17 @@ header, main, footer, .bottom-links, .modal {
     width: 18rem;
     height: 100%;
   }
+  .modal-container .success-modal .msg {
+    font-size: 2.2rem;
+  }
 }
 @media (min-width: 450px) {
   .modal-container.modal-container-popup {
     display: flex;
     animation: modal-popup 0.5s ease-in 1;
+  }
+  .modal-container.show {
+    display: flex;
   }
 }
 
