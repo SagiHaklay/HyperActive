@@ -7,7 +7,7 @@
 
 html {
     font-size: 16px;
-    direction: rtl;
+    // direction: rtl;
 }
 
 body {
@@ -19,8 +19,16 @@ img {
     max-width: 100%;
     max-height: 100%;
 }
+header, main, footer, .bottom-links, .modal {
+    direction: rtl;
+}
 .header-container {
-    min-height: 4rem;  
+    min-height: 4rem; 
+}
+.scroll-container {
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    height: 100vh;
 }
 .down-arrow {
     position: relative;
@@ -238,6 +246,7 @@ img {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border: 1px solid hsla(0,0%,80%,.5);
         }
         .arrow-container {
             width: 1rem;
@@ -296,6 +305,7 @@ img {
             flex-direction: row;
             a {
                 width: fit-content;
+                border: none;
             }
             .career-item {
                 flex-direction: column;
@@ -406,7 +416,7 @@ img {
 .pros-section {
     background-image: url("../../assets/pros-bg.png");
     background-size: cover;
-    box-shadow: 10px 50px 100px #000;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -676,6 +686,9 @@ img {
     .whatsapp-2 {
         display: none;
     }
+    @media (min-width: 450px) {
+        right: 15px;
+    }
 }
 
 .modal-container {
@@ -884,6 +897,7 @@ img {
         position: fixed;
         top: 0;
         z-index: 200;
+        right: 15px;
         .logo-container .logo {
             max-width: 100%;
         }
@@ -1008,17 +1022,21 @@ img {
             grid-area: subtitle;
         }
     }
-    .pros-section .compare {
-        flex-direction: row;
-        .other-schools, .our-school {
-            width: 45%;
-            transition: transform 0.5s;
-        }
-        .other-schools:hover, .our-school:hover {
-            transform: scale(1.1, 1.1);
-            box-shadow: 0 1rem 1rem 1rem #aaa6a3;
+    .pros-section {
+        box-shadow: 10px 50px 100px #000;
+        .compare {
+            flex-direction: row;
+            .other-schools, .our-school {
+                width: 45%;
+                transition: transform 0.5s;
+            }
+            .other-schools:hover, .our-school:hover {
+                transform: scale(1.1, 1.1);
+                box-shadow: 0 1rem 1rem 1rem #aaa6a3;
+            }
         }
     }
+    
     .expandable-item-list {
         flex-direction: row-reverse;
         justify-content: center;
@@ -1047,7 +1065,7 @@ img {
     .bottom-links {
         width: fit-content;
         height: 2rem;
-        right: 1rem;
+        right: 1.5rem;
         background-color: transparent;
         
         .contact-link, .whatsapp-1 {

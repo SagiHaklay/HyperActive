@@ -7,7 +7,6 @@
 
 html {
   font-size: 16px;
-  direction: rtl;
 }
 
 body {
@@ -19,8 +18,18 @@ img {
   max-height: 100%;
 }
 
+header, main, footer, .bottom-links, .modal {
+  direction: rtl;
+}
+
 .header-container {
   min-height: 4rem;
+}
+
+.scroll-container {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  height: 100vh;
 }
 
 .down-arrow {
@@ -225,6 +234,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid hsla(0, 0%, 80%, 0.5);
 }
 .career-content .careers .arrow-container {
   width: 1rem;
@@ -279,6 +289,7 @@ img {
   }
   .career-content .careers a {
     width: fit-content;
+    border: none;
   }
   .career-content .careers .career-item {
     flex-direction: column;
@@ -385,7 +396,6 @@ img {
 .pros-section {
   background-image: url("../../assets/pros-bg.png");
   background-size: cover;
-  box-shadow: 10px 50px 100px #000;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -649,6 +659,11 @@ img {
 .bottom-links .whatsapp-2 {
   display: none;
 }
+@media (min-width: 450px) {
+  .bottom-links {
+    right: 15px;
+  }
+}
 
 .modal-container {
   position: fixed;
@@ -855,6 +870,7 @@ img {
     position: fixed;
     top: 0;
     z-index: 200;
+    right: 15px;
   }
   .main-header .logo-container .logo {
     max-width: 100%;
@@ -971,6 +987,9 @@ img {
   .career-section .banner-subtitle {
     grid-area: subtitle;
   }
+  .pros-section {
+    box-shadow: 10px 50px 100px #000;
+  }
   .pros-section .compare {
     flex-direction: row;
   }
@@ -1004,7 +1023,7 @@ img {
   .bottom-links {
     width: fit-content;
     height: 2rem;
-    right: 1rem;
+    right: 1.5rem;
     background-color: transparent;
   }
   .bottom-links .contact-link, .bottom-links .whatsapp-1 {
