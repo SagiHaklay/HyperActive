@@ -697,9 +697,10 @@ header, main, footer, .bottom-links, .modal {
     justify-content: center;
     align-items: center;
     top: 0;
+    right: 15px;
     width: 100vw;
     height: 100vh;
-    background-color: rgba($color: #7e685a, $alpha: 0.5);
+    background-color: rgba($color: #000, $alpha: 0.31);
     z-index: 300;
     // transform: translateY(-100%);
     .modal-bg {
@@ -708,7 +709,7 @@ header, main, footer, .bottom-links, .modal {
         width: 100vh;
         height: 100vh;
         border-radius: 50%;
-        transform: rotateZ(40deg);
+        transform: rotateZ(42deg);
     }
     .modal {
         width: 100%;
@@ -717,7 +718,7 @@ header, main, footer, .bottom-links, .modal {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        transform: rotateZ(-40deg);
+        transform: rotateZ(-42deg);
         
         .exit-btn {
             background-color: transparent;
