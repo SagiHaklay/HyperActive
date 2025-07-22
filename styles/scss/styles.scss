@@ -219,7 +219,7 @@ header, main, footer, .bottom-links, .modal {
     padding: 0.5rem 0;
     .contact-form {
         display: none;
-        
+        background: linear-gradient(155deg,#154b9c,#213b7f)!important;
     }
 }
 
@@ -990,10 +990,10 @@ header, main, footer, .bottom-links, .modal {
         align-items: center;
     }
     .career-section {
-        min-width: 62rem;
+        min-width: 59rem;
         width: 80%;
         display: grid;
-        grid-template-columns: 40rem auto 22rem;
+        grid-template-columns: 40rem auto 20rem;
         grid-template-rows: 3rem 9rem auto;
         padding: 0.5rem 0.5rem 3rem;
         grid-template-areas: 
@@ -1084,6 +1084,9 @@ header, main, footer, .bottom-links, .modal {
         }
         
     }
+    
+}
+@media (min-width: 450px) {
     .modal-container.modal-container-popup {
         display: flex;
         animation: modal-popup 0.5s ease-in 1;
