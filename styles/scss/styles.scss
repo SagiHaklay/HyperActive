@@ -353,8 +353,12 @@ header, main, footer, .bottom-links, .modal, .success-modal {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 0.5rem;
+    padding: 0.3rem 1rem 1.2rem;
+    a {
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
     .contact-header {
         padding: 0;
         margin: 0;
@@ -433,6 +437,12 @@ header, main, footer, .bottom-links, .modal, .success-modal {
             font-weight: 600;
             font-size: 2.2rem;
         }
+    }
+    .form-gap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
     }
 }
 .pros-section {
@@ -726,6 +736,9 @@ header, main, footer, .bottom-links, .modal, .success-modal {
         text-decoration: none;
         font-size: 1.5rem;
     }
+    .link-text:hover {
+        text-decoration-line: underline;
+    }
     .whatsapp-2 {
         display: none;
     }
@@ -839,6 +852,9 @@ header, main, footer, .bottom-links, .modal, .success-modal {
                 border: none;
                 font-size: 1.3rem;
                 padding: 0.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
     }
