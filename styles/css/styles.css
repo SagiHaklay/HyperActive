@@ -23,7 +23,7 @@ header, main, footer, .bottom-links, .modal, .success-modal {
 }
 
 .header-container {
-  height: 3.4rem;
+  min-height: 3.4rem;
 }
 
 .scroll-container {
@@ -1053,7 +1053,6 @@ header, main, footer, .bottom-links, .modal, .success-modal {
     position: absolute;
     top: 80%;
     background-color: #1b316e;
-    border: 1px black solid;
     width: 100%;
   }
   .main-header .career-navbar:hover {

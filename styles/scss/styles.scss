@@ -23,7 +23,7 @@ header, main, footer, .bottom-links, .modal, .success-modal {
     direction: rtl;
 }
 .header-container {
-    height: 3.4rem; 
+    min-height: 3.4rem; 
 }
 .scroll-container {
     overflow-y: auto;
@@ -1094,7 +1094,7 @@ header, main, footer, .bottom-links, .modal, .success-modal {
             position: absolute;
             top: 80%;
             background-color: #1b316e;
-            border: 1px black solid;
+            // border: 1px black solid;
             width: 100%;
         }
         .career-navbar:hover {
